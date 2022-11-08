@@ -4,7 +4,7 @@ import AppHeader from './components/AppHeader.vue';
 import MainContent from './components/MainContent.vue';
 import MainNav from './components/MainNav.vue';
 import FooterTop from './components/FooterTop.vue';
-import FooterBottom from './components/FooterTop.vue';
+import FooterBottom from './components/FooterBottom.vue';
 
 export default {
     components:
@@ -13,7 +13,8 @@ export default {
         MainContent,
         MainNav,
         FooterTop,
-        FooterBottom,
+        FooterBottom
+
     }
 }
 </script>
@@ -25,6 +26,7 @@ export default {
     <MainNav />
     <FooterTop />
     <FooterBottom />
+
 
 </template>
 

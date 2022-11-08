@@ -84,8 +84,12 @@ export default {
     text-transform: uppercase;
 
     &__signup {
+        border: 1px solid $primary-color;
+        padding: 1em 1em;
+
         a {
             color: white;
+
         }
     }
 

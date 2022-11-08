@@ -122,6 +122,7 @@ export default {
             font-size: .8rem;
             font-weight: 600;
             text-transform: uppercase;
+            color: black;
         }
 
         .active {

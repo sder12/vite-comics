@@ -39,7 +39,7 @@ export default {
                     href: "#",
                     active: false,
                 },
-                ,
+
                 {
                     title: "fans",
                     href: "#",
@@ -76,13 +76,8 @@ export default {
                 <!-- Header Nav -->
                 <section class="header__navigation">
                     <ul>
-                        <!-- ERRORE -->
                         <li v-for="(item, index) in nav" :key="index">
                             <a href="#"> {{ item.title }} </a>
-                        </li>
-                        <!-- FUNZIONA -->
-                        <li>
-                            <a href="#"> {{ nav[0].title }} </a>
                         </li>
                     </ul>
                 </section>

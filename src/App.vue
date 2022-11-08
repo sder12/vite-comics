@@ -1,10 +1,19 @@
 
 <script>
 import AppHeader from './components/AppHeader.vue';
+import MainContent from './components/MainContent.vue';
+import MainNav from './components/MainNav.vue';
+import FooterTop from './components/FooterTop.vue';
+import FooterBottom from './components/FooterTop.vue';
+
 export default {
     components:
     {
         AppHeader,
+        MainContent,
+        MainNav,
+        FooterTop,
+        FooterBottom,
     }
 }
 </script>
@@ -12,6 +21,10 @@ export default {
 <template>
 
     <AppHeader />
+    <MainContent />
+    <MainNav />
+    <FooterTop />
+    <FooterBottom />
 
 </template>
 

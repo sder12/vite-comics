@@ -1,14 +1,66 @@
 <script>
 export default {
-    name: "FooterBottom"
+    name: "FooterBottom",
+    data() {
+        return {
+            socials: [
+                {
+                    name: "facebook",
+                    img: "footer-facebook.png",
+                    link: "#"
+                },
+                {
+                    name: "twitter",
+                    img: "footer-twitter.png",
+                    link: "#"
+                },
+                {
+                    name: "youtube",
+                    img: "footer-youtube.png",
+                    link: "#"
+                },
+                {
+                    name: "pinterest",
+                    img: "footer-pinterest.png",
+                    link: "#"
+                },
+                {
+                    name: "periscope",
+                    img: "footer-periscope.png",
+                    link: "#"
+                },
+            ]
+        }
+    },
+    methods: {
+        getImage(pathImg) {
+            return new URL(pathImg, import.meta.url).href
+        }
+    }
 }
 </script>
 
 <template>
     <div class="container">
         <div class="wrapper">
-            <footer>
-                <h1>Footer Bottom</h1>
+            <footer class="footer footer-bottom">
+                <section class="footer__signup">
+                    <div>
+                        <a href="#">sign-up now!</a>
+                    </div>
+                </section>
+                <section class="footer__social">
+                    <ul>
+                        <li>
+                            <span>follow-us</span>
+                        </li>
+                        <li v-for="(social, index) in socials" :key="index">
+                            <a :href="social.link">
+                                <img :src="getImage(`../assets/img/${social.img}`)" :alt="social.name">
+                            </a>
+                        </li>
+                    </ul>
+                </section>
             </footer>
         </div>
     </div>
@@ -24,6 +76,26 @@ export default {
 
     .wrapper {
         @include wrapper(3em, $paddingWrapper);
+    }
+}
+
+.footer {
+    @include flex(row, space-between, center);
+    text-transform: uppercase;
+
+    &__signup {
+        a {
+            color: white;
+        }
+    }
+
+    &__social ul {
+        @include flex(row, flex-end, center);
+        gap: 1em;
+
+        span {
+            color: $primary-color;
+        }
     }
 }
 </style>

@@ -77,6 +77,7 @@ export default {
     .product {
         @include flex(row, center, center);
         gap: 1em;
+        cursor: pointer;
 
         &__image {
             width: 40px

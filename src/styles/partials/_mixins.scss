@@ -1,0 +1,22 @@
+//Container with bg color
+@mixin bg-container($bgColor) {
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 100%;
+    background-color: $bgColor;
+}
+
+//Wrapper content section
+@mixin wrapper() {
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 80%;
+}
+
+//Basic Flex
+@mixin flex ($direction : row, $justify , $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}

@@ -1,7 +1,6 @@
 //Container with bg color
 @mixin bg-container($bgColor) {
     margin: 0 auto;
-    border: 1px solid black;
     width: 100%;
     background-color: $bgColor;
 }
@@ -9,7 +8,6 @@
 //Wrapper content section
 @mixin wrapper($paddingVertical, $paddingLateral) {
     margin: 0 auto;
-    border: 1px solid black;
     width: 80%;
     padding: $paddingVertical $paddingLateral;
 }

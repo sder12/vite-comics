@@ -5,53 +5,53 @@ export default {
         return {
             nav: [
                 {
-                    link: "characters",
+                    title: "characters",
                     href: "#",
                     active: false,
                 },
                 {
-                    link: "comics",
+                    title: "comics",
                     href: "#",
                     active: true,
                 },
                 {
-                    link: "movies",
+                    title: "movies",
                     href: "#",
                     active: false,
                 },
                 {
-                    link: "tv",
+                    title: "tv",
                     href: "#",
                     active: false,
                 },
                 {
-                    link: "games",
+                    title: "games",
                     href: "#",
                     active: false,
                 },
                 {
-                    link: "collectibles",
+                    title: "collectibles",
                     href: "#",
                     active: false,
                 },
                 {
-                    link: "videos",
+                    title: "videos",
                     href: "#",
                     active: false,
                 },
                 ,
                 {
-                    link: "fans",
+                    title: "fans",
                     href: "#",
                     active: false,
                 },
                 {
-                    link: "news",
+                    title: "news",
                     href: "#",
                     active: false,
                 },
                 {
-                    link: "shop",
+                    title: "shop",
                     href: "#",
                     active: false,
                 }
@@ -76,12 +76,12 @@ export default {
                 <!-- Header Nav -->
                 <section class="header__navigation">
                     <ul>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
+                        <li v-for="(item, index) in nav" :key="index">
+                            <a hrer="#"> {{ item.title }} </a>
+                        </li>
+                        <li>
+                            <a hrer="#"> {{ nav[0].title }} </a>
+                        </li>
                     </ul>
                 </section>
             </header>
@@ -95,7 +95,8 @@ export default {
 @use "../styles/partials/variables" as *;
 
 .container {
-    @include bg-container(white);
+    // Debug
+    @include bg-container(rgb(187, 187, 187));
 
     .wrapper {
         @include wrapper(.2em, $paddingWrapper);
@@ -114,6 +115,11 @@ export default {
     &__navigation ul {
         @include flex(row, flex-end, center);
         gap: 1em;
+
+        a {
+            font-size: .8rem;
+            text-transform: uppercase;
+        }
     }
 }
 </style>

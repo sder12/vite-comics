@@ -7,14 +7,15 @@
 }
 
 //Wrapper content section
-@mixin wrapper() {
+@mixin wrapper($paddingVertical, $paddingLateral) {
     margin: 0 auto;
     border: 1px solid black;
     width: 80%;
+    padding: $paddingVertical $paddingLateral;
 }
 
 //Basic Flex
-@mixin flex ($direction : row, $justify , $align) {
+@mixin flex ($direction, $justify , $align) {
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;

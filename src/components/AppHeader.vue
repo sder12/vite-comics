@@ -76,11 +76,13 @@ export default {
                 <!-- Header Nav -->
                 <section class="header__navigation">
                     <ul>
+                        <!-- ERRORE -->
                         <li v-for="(item, index) in nav" :key="index">
-                            <a hrer="#"> {{ item.title }} </a>
+                            <a href="#"> {{ item.title }} </a>
                         </li>
+                        <!-- FUNZIONA -->
                         <li>
-                            <a hrer="#"> {{ nav[0].title }} </a>
+                            <a href="#"> {{ nav[0].title }} </a>
                         </li>
                     </ul>
                 </section>

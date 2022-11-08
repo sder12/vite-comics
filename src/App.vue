@@ -10,7 +10,6 @@ export default {
 </script>
 
 <template>
-    <h1>DC COMICS</h1>
     <AppHeader />
 </template>
 

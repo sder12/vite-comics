@@ -76,8 +76,8 @@ export default {
                 <!-- Header Nav -->
                 <section class="header__navigation">
                     <ul>
-                        <li v-for="(item, index) in nav" :key="index">
-                            <a href="#"> {{ item.title }} </a>
+                        <li v-for="(item, index) in nav" :key="index" :class="{ 'active-border': item.active }">
+                            <a :href="item.href" :class="{ 'active': item.active }"> {{ item.title }} </a>
                         </li>
                     </ul>
                 </section>
@@ -93,10 +93,10 @@ export default {
 
 .container {
     // Debug
-    @include bg-container(rgb(187, 187, 187));
+    @include bg-container(white);
 
     .wrapper {
-        @include wrapper(.2em, $paddingWrapper);
+        @include wrapper(0em, $paddingWrapper);
     }
 }
 
@@ -113,9 +113,23 @@ export default {
         @include flex(row, flex-end, center);
         gap: 1em;
 
+        li {
+            height: $header-height;
+            @include flex(row, center, center);
+        }
+
         a {
             font-size: .8rem;
+            font-weight: 600;
             text-transform: uppercase;
+        }
+
+        .active {
+            color: $primary-color;
+        }
+
+        .active-border {
+            border-bottom: 4px solid $primary-color;
         }
     }
 }

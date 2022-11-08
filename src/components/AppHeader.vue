@@ -1,6 +1,63 @@
 <script>
 export default {
-    name: "AppHeader"
+    name: "AppHeader",
+    data() {
+        return {
+            nav: [
+                {
+                    link: "characters",
+                    href: "#",
+                    active: false,
+                },
+                {
+                    link: "comics",
+                    href: "#",
+                    active: true,
+                },
+                {
+                    link: "movies",
+                    href: "#",
+                    active: false,
+                },
+                {
+                    link: "tv",
+                    href: "#",
+                    active: false,
+                },
+                {
+                    link: "games",
+                    href: "#",
+                    active: false,
+                },
+                {
+                    link: "collectibles",
+                    href: "#",
+                    active: false,
+                },
+                {
+                    link: "videos",
+                    href: "#",
+                    active: false,
+                },
+                ,
+                {
+                    link: "fans",
+                    href: "#",
+                    active: false,
+                },
+                {
+                    link: "news",
+                    href: "#",
+                    active: false,
+                },
+                {
+                    link: "shop",
+                    href: "#",
+                    active: false,
+                }
+            ]
+        }
+    }
 }
 </script>
 

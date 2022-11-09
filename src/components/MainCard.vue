@@ -7,7 +7,7 @@ export default {
         cardSeries: String,
         cardType: String,
     },
-    methods: {
+    computed: {
         cardType() {
             if (this.cardType === "graphic novel") {
                 return "graphic"
@@ -23,7 +23,7 @@ export default {
 
 <template>
     <div class="card-wrapper">
-        <div class="card-img" :class="cardType()">
+        <div class="card-img" :class="cardType">
             <img :src="cardThumb" :alt="cardSeries">
             <span class="card-price"> {{ cardPrice }}</span>
         </div>

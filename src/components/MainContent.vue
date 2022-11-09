@@ -104,7 +104,8 @@ export default {
                 </div>
                 <!-- cards 6x2 -->
                 <div class="cards-wrapper">
-                    <MainCard />
+                    <MainCard :cardThumb="cardsList[1].thumb" :cardSeries="cardsList[1].series"
+                        :cardType="cardsList[1].type" />
                 </div>
                 <!-- button -->
                 <div class="cards-button">

@@ -105,9 +105,6 @@ export default {
                 <!-- cards 6x2 -->
                 <div class="cards-wrapper">
                     <MainCard />
-                    <div>
-                        <h3>{{ cardsList[1].type }}</h3>
-                    </div>
                 </div>
                 <!-- button -->
                 <div class="cards-button">
@@ -167,15 +164,18 @@ export default {
 // cards content
 .cards-wrapper {
     align-self: center;
+    @include flex(row, center, center);
+    flex-wrap: wrap;
     //DEBUG
     width: 100%;
-    height: 100px;
+
     border: 1px solid white;
 }
 
 //cards button
 .cards-button {
     align-self: center;
+    margin-top: 1.5em;
 
     button {
         background-color: $primary-color;

@@ -6,53 +6,53 @@ export default {
             nav: [
                 {
                     title: "characters",
-                    href: "#",
+                    href: "/characters",
                     active: false,
                 },
                 {
                     title: "comics",
-                    href: "#",
+                    href: "/comics",
                     active: true,
                 },
                 {
                     title: "movies",
-                    href: "#",
+                    href: "/movies",
                     active: false,
                 },
                 {
                     title: "tv",
-                    href: "#",
+                    href: "/tv",
                     active: false,
                 },
                 {
                     title: "games",
-                    href: "#",
+                    href: "/games",
                     active: false,
                 },
                 {
                     title: "collectibles",
-                    href: "#",
+                    href: "/collectibles",
                     active: false,
                 },
                 {
                     title: "videos",
-                    href: "#",
+                    href: "/videos",
                     active: false,
                 },
 
                 {
                     title: "fans",
-                    href: "#",
+                    href: "/videos",
                     active: false,
                 },
                 {
                     title: "news",
-                    href: "#",
+                    href: "/news",
                     active: false,
                 },
                 {
                     title: "shop",
-                    href: "#",
+                    href: "/shop",
                     active: false,
                 }
             ]
@@ -119,8 +119,10 @@ export default {
 
     //MENU NAV
     &__navigation ul {
+        height: $header-height;
         @include flex(row, flex-end, center);
         gap: 1em;
+
 
         li {
             height: $header-height;
@@ -132,21 +134,27 @@ export default {
                 font-weight: 600;
                 text-transform: uppercase;
                 color: black;
+
+                //Active page color txt
+                &.active {
+                    color: $primary-color;
+                }
             }
 
             &:hover a {
                 color: $primary-color;
             }
+
+            //Active page underline
+            &.active-border {
+                border-bottom: 4px solid $primary-color;
+            }
+
         }
 
-        //Active page
-        .active {
-            color: $primary-color;
-        }
 
-        .active-border {
-            border-bottom: 4px solid $primary-color;
-        }
+
+
     }
 }
 </style>

@@ -6,26 +6,31 @@ export default {
             prod: [
                 {
                     title: "digital comics",
+                    url: "/digital-comics",
                     img: "buy-comics-digital-comics.png",
                     imgSize: "bigger"
                 },
                 {
                     title: "dc merchandise",
+                    url: "/merchandise",
                     img: "buy-comics-merchandise.png",
                     imgSize: ""
                 },
                 {
                     title: "subscription",
+                    url: "/subscription",
                     img: "buy-comics-subscriptions.png",
                     imgSize: ""
                 },
                 {
                     title: "comic shop locator",
+                    url: "/comic-shop-locator",
                     img: "buy-comics-shop-locator.png",
                     imgSize: "bigger",
                 },
                 {
                     title: "dc power visa",
+                    url: "/dc-power-visa",
                     img: "buy-dc-power-visa.svg",
                     imgSize: ""
                 }
@@ -48,15 +53,18 @@ export default {
             <ul class="nav-products">
                 <!-- Product -->
                 <li class="product" v-for="(item, index) in prod" :key="index">
-                    <!-- Img -->
-                    <div class="product__image" :class="item.imgSize == 'bigger' ? '' : 'space-gap'">
-                        <img :src="getImage(`../assets/img/${item.img}`)" :alt="item.title"
-                            :class="item.imgSize == 'bigger' ? 'scale-down' : ''">
-                    </div>
-                    <!-- Text -->
-                    <div class="product__text">
-                        <span>{{ item.title }}</span>
-                    </div>
+                    <!-- Linked to another page -->
+                    <a :href="item.url">
+                        <!-- Img -->
+                        <div class="product__image" :class="item.imgSize == 'bigger' ? '' : 'space-gap'">
+                            <img :src="getImage(`../assets/img/${item.img}`)" :alt="item.title"
+                                :class="item.imgSize == 'bigger' ? 'scale-down' : ''">
+                        </div>
+                        <!-- Text -->
+                        <div class="product__text">
+                            <span>{{ item.title }}</span>
+                        </div>
+                    </a>
                 </li>
             </ul>
             <!-- / Nav Products -->
@@ -74,7 +82,7 @@ export default {
     @include bg-container($primary-color);
 
     .wrapper {
-        @include wrapper(1em, $paddingWrapper);
+        @include wrapper(0, $paddingWrapper);
         color: white;
     }
 }
@@ -84,15 +92,18 @@ export default {
     @include flex(row, space-around, center);
 
 
-
     //IMG + TXT
     .product {
         @include flex(row, center, center);
-        cursor: pointer;
         padding: 1em 1em;
+
+        a {
+            @include flex(row, center, center);
+        }
 
         &:hover {
             background-color: lighten($primary-color, 10%);
+            height: 100%;
         }
 
 
@@ -101,7 +112,7 @@ export default {
             width: 45px;
 
             .scale-down {
-                width: 33px;
+                width: 30px;
             }
         }
 

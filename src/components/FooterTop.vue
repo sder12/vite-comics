@@ -3,24 +3,138 @@ export default {
     name: "FooterTop",
     data() {
         return {
-            links: [
-                {
-                    title: "Dc Comics",
-                    subTitle: ["Characters", "Comics", "Movies", "TV", "Games", "Videos", "News"]
-                },
-                {
-                    title: "Shop",
-                    subTitle: ["Shop DC", "Shop DC Collectibles"]
-                },
-                {
-                    title: "DC",
-                    subTitle: ["Terms Of Use", "Privacy policy (New)", "Ad Choices", "Advertising", "Jobs", "Subscriptions", "Talent Workshops", "CPSC Certificates", "Ratings", "Shop Help", "Contact Us"]
-                },
-                {
-                    title: "Sites",
-                    subTitle: ["DC", "MAD Magazines", "DC Kids", "DC Universe", "DC Power Visa"]
-                }
-            ]
+            //LINKS FOOTER
+            //Dc Comics
+            comics: {
+                title: "Dc Comics",
+                subTitle: [
+                    {
+                        link: "Characters",
+                        url: "/characters"
+                    },
+                    {
+                        link: "Comics",
+                        url: "/comics"
+                    },
+                    {
+                        link: "Movies",
+                        url: "/movie"
+                    },
+                    {
+                        link: "TV",
+                        url: "/tv"
+                    },
+                    {
+                        link: "Games",
+                        url: "/games"
+                    },
+                    {
+                        link: "Videos",
+                        url: "/videos"
+                    },
+                    {
+                        link: "News",
+                        url: "/news"
+                    }
+                ]
+            },
+            //Shop
+            shop: {
+                title: "Shop",
+                subTitle: [
+                    {
+                        link: "Shop DC",
+                        url: "/shop-dc"
+                    },
+                    {
+                        link: "Shop DC Collectibles",
+                        url: "/shop-dc-collectibles"
+                    }
+                ]
+            },
+            //DC
+            dc: {
+                title: "DC",
+                subTitle: [
+                    {
+                        link: "Terms Of Use",
+                        url: "/terms-of-use"
+                    },
+                    {
+                        link: "Privacy policy (New)",
+                        url: "/privacy-policy"
+                    },
+                    {
+                        link: "Ad Choices",
+                        url: "/privacy-policy"
+                    },
+                    {
+                        link: "Advertising",
+                        url: "/asvertising"
+                    },
+                    {
+                        link: "Jobs",
+                        url: "/jobs"
+                    },
+                    {
+                        link: "Subscriptions",
+                        url: "/subscriptions"
+                    },
+                    {
+                        link: "Advertising",
+                        url: "/privacy-policy"
+                    },
+                    //  "Talent Workshops", "CPSC Certificates", "Ratings", "Shop Help", "Contact Us"
+                    {
+                        link: "Talent Workshops",
+                        url: "/talent"
+                    },
+                    {
+                        link: "CPSC Certificates",
+                        url: "/Cpsc-certificate"
+                    },
+                    {
+                        link: "Rating",
+                        url: "/rating"
+                    },
+                    {
+                        link: "Shop Help",
+                        url: "/shop-help"
+                    },
+                    {
+                        link: "Contact Us",
+                        url: "/contact-us"
+                    }
+                ]
+            },
+            //Sites
+            sites: {
+                title: "Sites",
+                subTitle: [
+                    {
+                        link: "DC",
+                        url: "/dc"
+                    },
+                    {
+                        link: "MAD Magazines",
+                        url: "/mad-magazines"
+                    },
+                    {
+                        link: "DC Kids",
+                        url: "/dc-kids"
+                    },
+                    {
+                        link: "DC Universe",
+                        url: "/dc-universe"
+                    }
+                    ,
+                    {
+                        link: "DC Power Visa",
+                        url: "/dc-power-visa"
+                    }
+                ]
+            }
+
         }
     }
 }
@@ -33,11 +147,38 @@ export default {
             <footer class="footer">
                 <!-- Left - Links -->
                 <section class="footer__links">
-                    <div v-for="(item, index) in links" :key="index">
-                        <h4>{{ item.title }}</h4>
+                    <div>
+                        <div>
+                            <h4>{{ comics.title }}</h4>
+                            <ul>
+                                <li v-for="(links, index) in comics.subTitle" :key="index">
+                                    <a :href="links.url"> {{ links.link }}</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-2">
+                            <h4>{{ shop.title }}</h4>
+                            <ul>
+                                <li v-for="(shops, index) in shop.subTitle" :key="index">
+                                    <a :href="shops.url"> {{ shops.link }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>{{ dc.title }}</h4>
                         <ul>
-                            <li v-for="(link, index) in item.subTitle" :key="index">
-                                <a href="#"> {{ link }}</a>
+                            <li v-for="(dcs, index) in dc.subTitle" :key="index">
+                                <a :href="dcs.url"> {{ dcs.link }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>{{ sites.title }}</h4>
+                        <ul>
+                            <li v-for="(site, index) in sites.subTitle" :key="index">
+                                <a :href="site.url"> {{ site.link }}</a>
                             </li>
                         </ul>
                     </div>
@@ -67,6 +208,10 @@ export default {
 }
 
 //Content
+.mt-2 {
+    margin-top: 2em
+}
+
 .footer {
     @include flex(row, space-between, center);
     height: $footer-top-height;
@@ -78,13 +223,18 @@ export default {
         gap: 1em;
         padding: 2em 0;
 
+        & div {
+            margin-right: .5em;
+        }
+
         h4 {
             padding-bottom: .8em;
             text-transform: uppercase;
         }
 
         li {
-            padding-bottom: .2rem;
+            padding-bottom: .3rem;
+            font-size: .9rem;
 
             a {
                 color: $footer-icon-color;

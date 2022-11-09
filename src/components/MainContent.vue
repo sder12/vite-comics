@@ -124,7 +124,7 @@ export default {
 @use "../styles/partials/variables" as *;
 
 
-//Layout
+//Layout BANNER
 .banner {
     @include bg-container(none);
     background-image: url("../assets/img/jumbotron.jpg");
@@ -134,6 +134,7 @@ export default {
     height: $banner-height;
 }
 
+//Layout CARDS container
 .container {
     @include bg-container($dark-color);
 
@@ -141,7 +142,6 @@ export default {
         @include wrapper(1em, $paddingWrapper);
         color: white;
     }
-
 }
 
 .cards-container {
@@ -151,7 +151,7 @@ export default {
 }
 
 //Content
-// cards title
+// TITLE current series
 .cards-title {
     position: absolute;
     top: -30px;
@@ -165,14 +165,14 @@ export default {
     }
 }
 
-// cards content
+// CARDS
 .cards-wrapper {
     @include flex(row, center, flex-start);
     flex-wrap: wrap;
     margin-top: 1em;
 }
 
-//cards button
+//BUTTON
 .cards-button {
     align-self: center;
     margin: 1.5em 0 1em;

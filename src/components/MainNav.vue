@@ -101,9 +101,8 @@ export default {
             @include flex(row, center, center);
         }
 
-        &:hover {
-            background-color: lighten($primary-color, 10%);
-            height: 100%;
+        &:hover span {
+            border-bottom: 2px solid white;
         }
 
 

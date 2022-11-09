@@ -27,7 +27,7 @@ export default {
             <img :src="cardThumb" :alt="cardSeries">
             <span class="card-price"> {{ cardPrice }}</span>
         </div>
-        <div class="card-series">
+        <div class="card-subtitle">
             <h4>{{ cardSeries }}</h4>
         </div>
     </div>
@@ -37,17 +37,20 @@ export default {
 @use "../styles/partials/mixins" as *;
 @use "../styles/partials/variables" as *;
 
+
+//Layout
 .card-wrapper {
     width: calc(100% / 6);
     @include flex(column, flex-start, center);
     margin-top: 2em;
     cursor: pointer;
 
-    &:hover .card-img {
+    &:hover .card-img img {
         opacity: .5;
     }
 }
 
+// CARD IMAGE
 .card-img {
     width: 10em;
     height: 10em;
@@ -60,7 +63,7 @@ export default {
         object-position: top;
     }
 
-
+    //Dynamic class based on the publication type
     &.graphic {
         border-bottom: 3px solid fuchsia;
     }
@@ -73,6 +76,7 @@ export default {
         border-bottom: 3px solid white;
     }
 
+    //Card-price
     .card-price {
         font-size: .8rem;
         background-color: black;
@@ -84,7 +88,8 @@ export default {
     }
 }
 
-.card-series {
+//CARD SUBTITLE
+.card-subtitle {
     align-self: flex-start;
     text-transform: uppercase;
     font-size: .9rem;

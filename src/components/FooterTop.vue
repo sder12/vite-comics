@@ -29,7 +29,9 @@ export default {
 <template>
     <div class="container">
         <div class="wrapper">
-            <footer class="footer footer-top">
+            <!-- Footer Top -->
+            <footer class="footer">
+                <!-- Left - Links -->
                 <section class="footer__links">
                     <div v-for="(item, index) in links" :key="index">
                         <h4>{{ item.title }}</h4>
@@ -40,11 +42,12 @@ export default {
                         </ul>
                     </div>
                 </section>
+                <!-- Right - Img -->
                 <section class="footer__image">
                     <img src="../assets/img/dc-logo-bg.png" alt="">
                 </section>
-
             </footer>
+            <!-- / Footer Top -->
         </div>
     </div>
 </template>
@@ -53,6 +56,7 @@ export default {
 @use "../styles/partials/mixins" as *;
 @use "../styles/partials/variables" as *;
 
+// Layout
 .container {
     @include bg-container(lightGrey);
     background-image: url(../assets/img/footer-bg.jpg);
@@ -60,42 +64,48 @@ export default {
     .wrapper {
         @include wrapper(0, $paddingWrapper);
     }
+}
 
-    .footer {
-        @include flex(row, space-between, center);
-        height: $footer-top-height;
-        color: white;
+//Content
+.footer {
+    @include flex(row, space-between, center);
+    height: $footer-top-height;
+    color: white;
 
-        &__links {
-            @include flex(row, flex-start, flex-start);
-            gap: 1em;
-            padding: 2em 0;
+    // LEFT links
+    &__links {
+        @include flex(row, flex-start, flex-start);
+        gap: 1em;
+        padding: 2em 0;
 
-            h4 {
-                padding-bottom: .8em;
-                text-transform: uppercase;
-            }
+        h4 {
+            padding-bottom: .8em;
+            text-transform: uppercase;
+        }
 
-            li {
-                padding-bottom: .2rem;
+        li {
+            padding-bottom: .2rem;
 
-                a {
-                    color: $footer-icon-color;
-                    font-weight: 400;
+            a {
+                color: $footer-icon-color;
+                font-weight: 400;
+
+                &:hover {
+                    color: white;
                 }
             }
         }
+    }
 
-        &__image {
-            @include flex (row, center, center);
-            height: $footer-top-height;
-            overflow: hidden;
+    //RIGHT img
+    &__image {
+        @include flex (row, center, center);
+        height: $footer-top-height;
+        overflow: hidden;
 
-            img {
-                width: calc($footer-top-height + 100px);
-            }
+        img {
+            width: calc($footer-top-height + 100px);
         }
-
     }
 
 }

@@ -43,12 +43,15 @@ export default {
 <template>
     <div class="container">
         <div class="wrapper">
-            <footer class="footer footer-bottom">
+            <!-- Footer Bottom -->
+            <footer class="footer">
+                <!-- Left - sign up -->
                 <section class="footer__signup">
                     <div>
                         <a href="#">sign-up now!</a>
                     </div>
                 </section>
+                <!-- Right - follow us -->
                 <section class="footer__social">
                     <ul>
                         <li>
@@ -62,43 +65,59 @@ export default {
                     </ul>
                 </section>
             </footer>
+            <!-- / Footer Bottom -->
         </div>
     </div>
 </template>
+
 
 <style lang="scss" scoped>
 @use "../styles/partials/mixins" as *;
 @use "../styles/partials/variables" as *;
 
+// Layout
 .container {
     @include bg-container($footer-color);
     min-height: $footer-bottom-height;
 
     .wrapper {
-        @include wrapper(3em, $paddingWrapper);
+        @include wrapper(2em, $paddingWrapper);
     }
 }
 
+//Content
 .footer {
     @include flex(row, space-between, center);
     text-transform: uppercase;
+    font-weight: 600;
 
+    //LEFT sign up
     &__signup {
-        border: 1px solid $primary-color;
+        border: 2px solid $primary-color;
         padding: 1em 1em;
+        cursor: pointer;
 
         a {
             color: white;
+        }
 
+        &:hover {
+            background-color: darken($primary-color, 30%);
         }
     }
 
+    //RIGHT follow us
     &__social ul {
         @include flex(row, flex-end, center);
-        gap: 1em;
+        gap: 1.2em;
 
         span {
             color: $primary-color;
+            font-size: 1.2rem;
+        }
+
+        a:hover img {
+            filter: brightness(180%);
         }
     }
 }

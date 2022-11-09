@@ -65,15 +65,17 @@ export default {
     <!-- Container-wrapper -->
     <div class="container">
         <div class="wrapper">
-
+            <!-- HEADER -->
             <header class="header">
-                <!-- Header logo -->
+                <!-- LEFT logo  -->
                 <section class="header__logo">
                     <div>
-                        <img src="../assets/img/dc-logo.png" alt="">
+                        <a href="#">
+                            <img src="../assets/img/dc-logo.png" alt="">
+                        </a>
                     </div>
                 </section>
-                <!-- Header Nav -->
+                <!-- RIGHT menu nav -->
                 <section class="header__navigation">
                     <ul>
                         <li v-for="(item, index) in nav" :key="index" :class="{ 'active-border': item.active }">
@@ -82,15 +84,19 @@ export default {
                     </ul>
                 </section>
             </header>
+            <!-- / HEADER -->
         </div>
     </div>
 
 </template>
 
+
+
 <style lang="scss" scoped>
 @use "../styles/partials/mixins" as *;
 @use "../styles/partials/variables" as *;
 
+//Layout
 .container {
     // Debug
     @include bg-container(white);
@@ -100,15 +106,18 @@ export default {
     }
 }
 
+//Content
 .header {
     height: $header-height;
     @include flex(row, space-between, center);
 
+    //LOGO
     &__logo div {
         width: $header-logo;
         height: $header-logo;
     }
 
+    //MENU NAV
     &__navigation ul {
         @include flex(row, flex-end, center);
         gap: 1em;
@@ -116,15 +125,21 @@ export default {
         li {
             height: $header-height;
             @include flex(row, center, center);
+            border-bottom: 4px solid white;
+
+            a {
+                font-size: .8rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: black;
+            }
+
+            &:hover a {
+                color: $primary-color;
+            }
         }
 
-        a {
-            font-size: .8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: black;
-        }
-
+        //Active page
         .active {
             color: $primary-color;
         }

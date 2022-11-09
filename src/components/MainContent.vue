@@ -7,9 +7,11 @@ export default {
 <template>
     <div class="container">
         <div class="wrapper">
+            <!-- MAIN -->
             <div>
                 <h2>Content goes here</h2>
             </div>
+            <!-- / MAIN -->
         </div>
     </div>
 </template>
@@ -19,6 +21,8 @@ export default {
 @use "../styles/partials/mixins" as *;
 @use "../styles/partials/variables" as *;
 
+
+//Layout
 .container {
     @include bg-container($dark-color);
 
@@ -28,6 +32,7 @@ export default {
 
 }
 
+//Content
 //DEBUG
 h2 {
     color: white;

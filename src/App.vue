@@ -14,7 +14,6 @@ export default {
         MainNav,
         FooterTop,
         FooterBottom
-
     }
 }
 </script>

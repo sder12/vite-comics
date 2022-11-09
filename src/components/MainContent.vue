@@ -105,7 +105,7 @@ export default {
                 <!-- cards 6x2 -->
                 <div class="cards-wrapper">
                     <MainCard v-for="(card, index) in cardsList" :key="index" :cardThumb="card.thumb"
-                        :cardSeries="card.series" :cardType="card.type" />
+                        :cardSeries="card.series" :cardPrice="card.price" :cardType="card.type" />
                 </div>
                 <!-- button -->
                 <div class="cards-button">
@@ -147,16 +147,19 @@ export default {
 .cards-container {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 //Content
 // cards title
 .cards-title {
+    position: absolute;
+    top: -30px;
     align-self: flex-start;
 
     h4 {
         background-color: $primary-color;
-        padding: .5em .5em;
+        padding: .8em .8em;
         text-transform: uppercase;
         text-align: center;
     }
@@ -164,15 +167,15 @@ export default {
 
 // cards content
 .cards-wrapper {
-    align-self: center;
-    @include flex(row, center, center);
+    @include flex(row, center, flex-start);
     flex-wrap: wrap;
+    margin-top: 1em;
 }
 
 //cards button
 .cards-button {
     align-self: center;
-    margin-top: 1.5em;
+    margin: 1.5em 0 1em;
 
     button {
         background-color: $primary-color;
@@ -182,6 +185,12 @@ export default {
         text-transform: uppercase;
         font-weight: 700;
         font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten($primary-color, 10%);
+        }
     }
+
 }
 </style>

@@ -104,8 +104,8 @@ export default {
                 </div>
                 <!-- cards 6x2 -->
                 <div class="cards-wrapper">
-                    <MainCard :cardThumb="cardsList[1].thumb" :cardSeries="cardsList[1].series"
-                        :cardType="cardsList[1].type" />
+                    <MainCard v-for="(card, index) in cardsList" :key="index" :cardThumb="card.thumb"
+                        :cardSeries="card.series" :cardType="card.type" />
                 </div>
                 <!-- button -->
                 <div class="cards-button">
@@ -167,10 +167,6 @@ export default {
     align-self: center;
     @include flex(row, center, center);
     flex-wrap: wrap;
-    //DEBUG
-    width: 100%;
-
-    border: 1px solid white;
 }
 
 //cards button
